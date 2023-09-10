@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import { PrimerComponente } from './componentes/primerComponente';
 
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
         <p>
           Hello World!!
         </p>
-        
+        <primerComponente/>
       </header>
     </div>
   );
