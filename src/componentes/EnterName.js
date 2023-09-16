@@ -3,8 +3,6 @@ import ReactState, {useState} from 'react'
 
 
 export const EnterName = () => {
-  
-
 
   const [nombre, setNombre] = useState('');
 
@@ -19,3 +17,4 @@ export const EnterName = () => {
     </>
   )
 }
+
