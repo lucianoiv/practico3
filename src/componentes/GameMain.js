@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import go from '../img/go.png'
+import youWin from '../img/youwin.png'
+import youLose from '../img/youlose.png'
 
 export const GameMain = (props) => {
 
@@ -7,8 +10,29 @@ export const GameMain = (props) => {
 
   const [jugadaJugador, setJugada] = useState(props.rock);
   const [jugadaComputadora, setJugadaComputadora] = useState(props.paper);
+  const [ganador, setGanador] = useState(go)
 
 
+const finJuego = () => {
+    if (resultadoJugador === 3){
+        alert("GANA JUGADOR");
+        setGanador(youWin);
+           
+    } else if (resultadoComputadora === 3 ){
+        alert("GANA COMPUTADORA");
+        setGanador(youLose);
+    }
+};
+
+
+
+    function resetScore() {
+        setGanador(go);
+        setresultadoComputadora(0);
+        setresultadoJugador(0);
+    }
+
+   
 
 
 
@@ -16,7 +40,16 @@ let i = Math.floor(Math.random() * 5);
 let array = [props.rock,props.paper,props.scissors,props.lizard,props.spock];
 let jugadaAleatoria = array[i];
 
+
   function determinarGanador(jugada,computadora){
+    if (resultadoJugador === 3){
+        alert("GANA JUGADOR");
+        setGanador(youWin);
+           
+    } else if (resultadoComputadora === 3 ){
+        alert("GANA COMPUTADORA");
+        setGanador(youLose);
+    }
         if (
             (jugada === props.rock && computadora === props.scissors) ||
             (jugada === props.rock && computadora === props.lizard) ||
@@ -45,7 +78,7 @@ let jugadaAleatoria = array[i];
             (computadora === props.spock && jugada === props.scissors) ||
             (computadora === props.spock && jugada === props.rock)
             )
-        {   setresultadoComputadora(resultadoComputadora + 1)
+        {   setresultadoComputadora(resultadoComputadora + 1);
             console.log("QUe es eso?"+jugada+computadora)
             console.log("GANA computadora");
         } else{
@@ -54,15 +87,16 @@ let jugadaAleatoria = array[i];
     }
     
     const resultadoFinal = (a,b)=>{
-        console.log("1 set jugada");
-        console.log("valor A"+a)
+        
+        //console.log("1 set jugada");
+        //console.log("valor A"+a)
         setJugada(a);
-        console.log("2 funcion jugada computadora");
-        console.log("jUGADA COMPUTADORA"+b);
+        //console.log("2 funcion jugada computadora");
+        //console.log("jUGADA COMPUTADORA"+b);
         setJugadaComputadora(b);
-        console.log("3 Funcion Resultado Final");
+        //console.log("3 Funcion Resultado Final");
         determinarGanador(a,b);
-        console.log("4 FIN DE LA FUNCION");
+        //console.log("4 FIN DE LA FUNCION");
     }
 
   return (
@@ -87,7 +121,7 @@ let jugadaAleatoria = array[i];
                     <span><img  id="resultado1" src={jugadaJugador} alt=""></img></span>
             </div>
             <div>
-                <img id="gameOn" src="" alt=""></img>
+                <img id="gameOn" src={ganador} alt=""></img>
             </div>
             <div>
                 <h3>Computer</h3>
@@ -99,15 +133,15 @@ let jugadaAleatoria = array[i];
         <div className="scoreboard">
             <div className="scoreboard__div">
                 <h4 id="player2">{props.nombre}</h4>
-                    <p id="player_score">{resultadoJugador}</p>
+                    <p id="player_score" >{resultadoJugador}</p>
             </div>
             
             <div className="reset__btn">
-                <button className="reset__btn" type="button" onClick={""}>RESET  SCORE</button>
+                <button className="reset__btn" type="button" onClick={resetScore}>RESET  SCORE</button>
             </div>
             <div className="scoreboard__div">
                 <h4>Computer</h4>
-                    <p id="computer_score">{resultadoComputadora}</p>
+                    <p id="computer_score" >{resultadoComputadora}</p>
             </div>
         </div>
     </>

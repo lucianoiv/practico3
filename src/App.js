@@ -19,9 +19,6 @@ function App() {
 
   let [nombre, setNombre] = useState("Player");
   
-
-  
-
   const cambiarNombre = (nuevoNombre) => {
     setNombre(nuevoNombre);  
   }
