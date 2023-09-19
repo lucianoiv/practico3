@@ -10,6 +10,7 @@ import { ChooseGame } from './componentes/ChooseGame';
 import { GameMain } from './componentes/GameMain';
 import { GameRules } from './componentes/GameRules';
 import { GameTitle } from './componentes/GameTitle';
+import { GameRulesVideo } from './componentes/GameRulesVideo';
 
 
 
@@ -17,29 +18,57 @@ import { GameTitle } from './componentes/GameTitle';
 
 function App() {
 
-  let [nombre, setNombre] = useState("Player");
+  let [nombre, setNombre] = useState("");
   
   const cambiarNombre = (nuevoNombre) => {
     setNombre(nuevoNombre);  
   }
 
+  const [start, setStart] = useState(false);
+  const [gameRules, setGameRules] = useState(false);
+  const [videoRules, setVideoRules] = useState(false);
+
+  const setInicio = () => {
+    setStart(true)
+  }
+
+  const rules = () => {
+    setGameRules(!gameRules)
+  }
+
+  const rulesVideo = () => {
+    setVideoRules(!videoRules)
+  }
+
   return (
     <div className="body">
 
-      <GameTitle/>
+      <GameTitle  rulesVideo={rulesVideo} rules={rules}/>
 
-      <>
-        <p className="title">Enter your name</p>
-        <input type="text" className="nombre" id="nombre" maxLength="10" onChange={e => cambiarNombre(e.target.value)} placeholder="Enter name"></input>
-      </>
-
-      <ChooseGame nombre={nombre}/>
-
-      <div id="container" className="container">
-        <GameMain rock={rockImg} paper={paperImg} scissors={scissorsImg} lizard={lizardImg} spock={spockImg} locked={lockedImg} nombre={nombre}/>
+      <div>
+          <p className="title">Enter your name</p>
+          <input 
+          type="text" 
+          className="nombre" 
+          id="nombre" 
+          maxLength="10"
+          minLength="3"
+          
+          onChange={e => cambiarNombre(e.target.value)} 
+          placeholder="Enter name"
+          ></input>
       </div>
 
-      <GameRules/>
+      <ChooseGame nombre={nombre} setInicio={setInicio}/> 
+
+      {start ? 
+      <div id="container" className="container">
+        <GameMain rock={rockImg} paper={paperImg} scissors={scissorsImg} lizard={lizardImg} spock={spockImg} locked={lockedImg} nombre={nombre}/>
+      </div> : "" }
+    
+      {gameRules ? <GameRules rules={rules}/> : "" }
+      {videoRules ? <GameRulesVideo rulesVideo={rulesVideo}/> : "" }
+
 
     </div>
   );

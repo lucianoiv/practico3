@@ -3,6 +3,7 @@ import go from '../img/go.png'
 import youWin from '../img/youwin.png'
 import youLose from '../img/youlose.png'
 
+
 export const GameMain = (props) => {
 
     let [resultadoComputadora, setresultadoComputadora] = useState(0);
@@ -13,16 +14,19 @@ export const GameMain = (props) => {
   const [ganador, setGanador] = useState(go)
 
 
-const finJuego = () => {
+
     if (resultadoJugador === 3){
         alert("GANA JUGADOR");
         setGanador(youWin);
-           
+        setresultadoComputadora(0);
+        setresultadoJugador(0);
+
     } else if (resultadoComputadora === 3 ){
         alert("GANA COMPUTADORA");
         setGanador(youLose);
+        setresultadoComputadora(0);
+        setresultadoJugador(0);
     }
-};
 
 
 
@@ -42,14 +46,6 @@ let jugadaAleatoria = array[i];
 
 
   function determinarGanador(jugada,computadora){
-    if (resultadoJugador === 3){
-        alert("GANA JUGADOR");
-        setGanador(youWin);
-           
-    } else if (resultadoComputadora === 3 ){
-        alert("GANA COMPUTADORA");
-        setGanador(youLose);
-    }
         if (
             (jugada === props.rock && computadora === props.scissors) ||
             (jugada === props.rock && computadora === props.lizard) ||
@@ -64,6 +60,7 @@ let jugadaAleatoria = array[i];
             
         ){
             setresultadoJugador(resultadoJugador + 1);
+            
             console.log("QUe es eso?"+jugada+computadora)
             console.log("GANA USUARIO");
         } else if (
@@ -79,11 +76,14 @@ let jugadaAleatoria = array[i];
             (computadora === props.spock && jugada === props.rock)
             )
         {   setresultadoComputadora(resultadoComputadora + 1);
+            
+
             console.log("QUe es eso?"+jugada+computadora)
             console.log("GANA computadora");
         } else{
             console.log("Este es el ELSE QUe es eso?"+jugada+computadora)
         }
+        
     }
     
     const resultadoFinal = (a,b)=>{
@@ -97,6 +97,8 @@ let jugadaAleatoria = array[i];
         //console.log("3 Funcion Resultado Final");
         determinarGanador(a,b);
         //console.log("4 FIN DE LA FUNCION");
+        
+        console.log(resultadoJugador,resultadoComputadora);
     }
 
   return (
@@ -141,9 +143,39 @@ let jugadaAleatoria = array[i];
             </div>
             <div className="scoreboard__div">
                 <h4>Computer</h4>
-                    <p id="computer_score" >{resultadoComputadora}</p>
+                    <p id="computer_score"  >{resultadoComputadora}</p>
             </div>
         </div>
     </>
   )
 }
+
+
+
+
+/*import React, { useState } from 'react';
+
+const CheckboxComponent = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);  // Cambia el estado al contrario de lo que estaba
+    // Aquí puedes realizar la acción que desees cuando el checkbox se marque o desmarque
+  };
+
+  return (
+    <div>
+      <label>
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleCheckboxChange} // El
+onChange={handleCheckboxChange} // El evento onChange se dispara cuando el checkbox cambia
+        />
+        Checkbox
+      </label>
+    </div>
+  );
+};
+
+export default CheckboxComponent;*/

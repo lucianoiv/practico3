@@ -2,9 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-.body{
+html{
     background-image: url("img/background.webp");
-    background-position: center center;
+}
+.body{
+    
+    background-position: center cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -35,6 +38,9 @@ a{
     text-decoration: none;
 }
 
+input:invalid{
+    background-color: red;
+}
 .nombre{
     width: 12rem;
     height: 2rem;
@@ -113,6 +119,15 @@ img{
     background-color: rgba(214, 213, 213, 0.775);
     border-radius: 50px;
     box-shadow: 0 0 30px 5px rgb(255, 255, 255);
+    text-align: center;
+}
+
+.ValidName{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(245, 47, 47, 0.775);
+    border-radius: 50px;
+    box-shadow: 0 20px 40px 40px rgb(248, 124, 124);
     text-align: center;
 }
 
