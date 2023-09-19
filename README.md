@@ -1,3 +1,10 @@
+# HOLA ALE!! SI ESTAS LEYENDO ESTO ES PORQUE TODAVIA ME FALTA UN POCO.
+# LA APP FUNCIONA, LE FALTA UN TOQUE DE CSS Y ME FALTA HACER ESTE README.
+# SI CREES QUE ME FALTA PARA APROBAR, POR FAVOR AVISAME.
+# QUIERO CONTINUAR CON LA TERCER PARTE DEL CURSO.
+# GRACIAS!!!!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
