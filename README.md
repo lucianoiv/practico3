@@ -2,6 +2,7 @@
 # LAGARTO, SPOCK.
 
 [https://github.com/lucianoiv/practico3.git](https://github.com/lucianoiv/practico3.git)
+[https://lucianoiv.github.io/practico3/](https://lucianoiv.github.io/practico3/)
 
 Este proyecto fue creado con React.
 En el podes jugar al juego creado por Sheldon Cooper, un personaje de la serie [The Big Bang Theory](https://www.warnerbros.com/tv/big-bang-theory), que reinventa el juego clasico de piedra papel tijeras porque, segun él, las opciones del mismo son pocas y los empates son muy frecuentes, y agrega dos opciones más, **lagarto** y **spock** cada una con sus caracteristicas. [video](https://www.youtube.com/watch?v=pIpmITBocfM&pp=ygUgcm9jayBwYXBlciBzY2lzc29ycyBsaXphcmQgc3BvY2s%3D)
