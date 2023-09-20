@@ -1,7 +1,7 @@
 # PIEDRA, PAPEL, TIJERAS, 
 # LAGARTO, SPOCK.
 
-[https://github.com/lucianoiv/practico3.git](https://github.com/lucianoiv/practico3.git)
+[https://github.com/lucianoiv/practico3.git](https://github.com/lucianoiv/practico3.git)<br>
 [https://lucianoiv.github.io/practico3/](https://lucianoiv.github.io/practico3/)
 
 Este proyecto fue creado con React.
