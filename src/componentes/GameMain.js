@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import go from '../img/go.png'
 import youWin from '../img/youwin.png'
 import youLose from '../img/youlose.png'
+import { Resultado } from './Resultado'
 
 
 export const GameMain = (props) => {
@@ -12,33 +13,30 @@ export const GameMain = (props) => {
   const [jugadaJugador, setJugada] = useState(props.rock);
   const [jugadaComputadora, setJugadaComputadora] = useState(props.paper);
   const [ganador, setGanador] = useState(go)
-
+  const [resultado, setResultado] = useState(true)
 
 
     if (resultadoJugador === 3){
-        alert("GANA JUGADOR");
+        
         setGanador(youWin);
         setresultadoComputadora(0);
         setresultadoJugador(0);
+        setResultado(false)
 
     } else if (resultadoComputadora === 3 ){
-        alert("GANA COMPUTADORA");
+        
         setGanador(youLose);
         setresultadoComputadora(0);
         setresultadoJugador(0);
+        setResultado(false)
     }
-
-
 
     function resetScore() {
         setGanador(go);
         setresultadoComputadora(0);
         setresultadoJugador(0);
+        setResultado(true)
     }
-
-   
-
-
 
 let i = Math.floor(Math.random() * 5);
 let array = [props.rock,props.paper,props.scissors,props.lizard,props.spock];
@@ -60,9 +58,7 @@ let jugadaAleatoria = array[i];
             
         ){
             setresultadoJugador(resultadoJugador + 1);
-            
-            console.log("QUe es eso?"+jugada+computadora)
-            console.log("GANA USUARIO");
+
         } else if (
             (computadora === props.rock && jugada === props.lizard) ||
             (computadora === props.rock && jugada === props.scissors) ||
@@ -76,33 +72,19 @@ let jugadaAleatoria = array[i];
             (computadora === props.spock && jugada === props.rock)
             )
         {   setresultadoComputadora(resultadoComputadora + 1);
-            
 
-            console.log("QUe es eso?"+jugada+computadora)
-            console.log("GANA computadora");
-        } else{
-            console.log("Este es el ELSE QUe es eso?"+jugada+computadora)
         }
-        
     }
     
     const resultadoFinal = (a,b)=>{
-        
-        //console.log("1 set jugada");
-        //console.log("valor A"+a)
         setJugada(a);
-        //console.log("2 funcion jugada computadora");
-        //console.log("jUGADA COMPUTADORA"+b);
         setJugadaComputadora(b);
-        //console.log("3 Funcion Resultado Final");
         determinarGanador(a,b);
-        //console.log("4 FIN DE LA FUNCION");
-        
-        console.log(resultadoJugador,resultadoComputadora);
     }
 
   return (
     <>
+        { resultado ? 
         <div className="opciones">
 
             <button type="button" onClick={()=>resultadoFinal(props.rock,jugadaAleatoria)} id="props.rock"><img src={props.rock} alt=""></img></button>
@@ -115,6 +97,8 @@ let jugadaAleatoria = array[i];
             
             <button type="button" onClick={()=>resultadoFinal(props.spock,jugadaAleatoria)} id="props.spock"><img src={props.spock} alt="" id="props.spock__btn"></img></button>
         </div>
+        : <Resultado/>}
+
         <div>
         <div className="resultado">
             <div>
@@ -139,43 +123,17 @@ let jugadaAleatoria = array[i];
             </div>
             
             <div className="reset__btn">
-                <button className="reset__btn" type="button" onClick={resetScore}>RESET  SCORE</button>
+            <button className="reset__btn" type="button" onClick={props.restart}>CHANGE NAME</button>
+                <button className="reset__btn" type="button" onClick={resetScore}>RESET GAME</button>
             </div>
             <div className="scoreboard__div">
                 <h4>Computer</h4>
                     <p id="computer_score"  >{resultadoComputadora}</p>
             </div>
+
+            
         </div>
+        
     </>
   )
 }
-
-
-
-
-/*import React, { useState } from 'react';
-
-const CheckboxComponent = () => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);  // Cambia el estado al contrario de lo que estaba
-    // Aquí puedes realizar la acción que desees cuando el checkbox se marque o desmarque
-  };
-
-  return (
-    <div>
-      <label>
-        <input
-          type="checkbox"
-          checked={isChecked}
-          onChange={handleCheckboxChange} // El
-onChange={handleCheckboxChange} // El evento onChange se dispara cuando el checkbox cambia
-        />
-        Checkbox
-      </label>
-    </div>
-  );
-};
-
-export default CheckboxComponent;*/

@@ -12,10 +12,6 @@ import { GameRules } from './componentes/GameRules';
 import { GameTitle } from './componentes/GameTitle';
 import { GameRulesVideo } from './componentes/GameRulesVideo';
 
-
-
-
-
 function App() {
 
   let [nombre, setNombre] = useState("");
@@ -32,6 +28,10 @@ function App() {
     setStart(true)
   }
 
+  const Restart = () =>  {
+    setStart(false)
+  }
+
   const rules = () => {
     setGameRules(!gameRules)
   }
@@ -45,6 +45,7 @@ function App() {
 
       <GameTitle  rulesVideo={rulesVideo} rules={rules}/>
 
+      { !start ? 
       <div>
           <p className="title">Enter your name</p>
           <input 
@@ -57,19 +58,17 @@ function App() {
           onChange={e => cambiarNombre(e.target.value)} 
           placeholder="Enter name"
           ></input>
-      </div>
+      </div> : "" }
 
       <ChooseGame nombre={nombre} setInicio={setInicio}/> 
 
       {start ? 
       <div id="container" className="container">
-        <GameMain rock={rockImg} paper={paperImg} scissors={scissorsImg} lizard={lizardImg} spock={spockImg} locked={lockedImg} nombre={nombre}/>
+        <GameMain rock={rockImg} paper={paperImg} scissors={scissorsImg} lizard={lizardImg} spock={spockImg} locked={lockedImg} nombre={nombre} restart={Restart} />
       </div> : "" }
     
       {gameRules ? <GameRules rules={rules}/> : "" }
       {videoRules ? <GameRulesVideo rulesVideo={rulesVideo}/> : "" }
-
-
     </div>
   );
 }

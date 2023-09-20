@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# PIEDRA, PAPEL, TIJERAS, 
+# LAGARTO, SPOCK.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con React.
+En el podes jugar al juego creado por Sheldon Cooper, un personaje de la serie [The Big Bang Theory](https://www.warnerbros.com/tv/big-bang-theory), que reinventa el juego clasico de piedra papel tijeras porque, segun él, las opciones del mismo son pocas y los empates son muy frecuentes, y agrega dos opciones más, **lagarto** y **spock** cada una con sus caracteristicas. [video](https://www.youtube.com/watch?v=pIpmITBocfM&pp=ygUgcm9jayBwYXBlciBzY2lzc29ycyBsaXphcmQgc3BvY2s%3D)
 
-## Available Scripts
+## Funcionalidad
 
-In the project directory, you can run:
+Al ingresar a la pagina nos encontramos con los botones de las reglas del juego clasico y reglas de este juego nuevo en la parte de arriba. Justo abajo podemos agregar nuestro un nombre de jugador, que debe tener mas de 3 caracteres, y un maximo de 10 para poder comenzar el juego. Ademas no debe tener espaciones vacios, y solo permite letras mayusculas y minusculas.
 
-### `npm start`
+Una vez que ingresamos un nombre valido, visualizaremos las opciones que tenemos a disposicion. Al elegir una, la computadora elegirá una al azar y mostrara quien gana la ronda en los marcadores. 
+##
+### Fin del juego
+##
+Debido a que es al mejor de 5, gana el jugador que llegue a 3 partidas ganadas. Los empates no cuentan. Cuando uno de los dos, jugador o computadora llega a los 3 puntos, muestra el mensaje GAME OVER y si el jugador ganó o perdió.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El usuario tendrá las opciones de reiniciar el juego o volver al inicio para cambiar el nombre.
+##
+# EXPERIENCIA PERSONAL
+##
+Al borde de renunciar, me costó al principio, pero me di cuenta que no le dedique mucho tiempo, con el practico de JS no tuve problemas, hice el codigo en 2 dias, y quedo con detalles.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>A este práctico no le pude dedicar tanto tiempo 
 
-### `npm test`
+<br>(excusas: soy profe, me tocaron 2 semanas de tomar prueba, corregir y pasar notas de 100 pibes)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br> 
+por eso lo termino a ultimo momento. Fue aprender practicamente otro lenguaje, era otra sintaxis, no entendia nada de lo que estaba haciendo mientras copiaba los ejercicios. El hecho de que todo o casi todo se llame a traves de funciones me costo, porque, si bien las entiendo, en REACT teniamos que cambiar estados, estados que nosotros creabamos, y habia que hacer funciones flechas que dentro llamaban a otras funciones, que estaban en un onClick, que en algunos casos eran props de otros componentes. No renuncié porque me gusta muchisimo la programación, pero estuve frustrado varios días porque no sabia por donde entrarle.
 
-### `npm run build`
+<br>Despues pude agarrarle la mano, entendí como debia hacer algunas cosas, seguramente debe haber formas mas cortas, y simplificadas de hacerlas, con menos lineas de codigo, pero como las aprendi asi, y funcionan, las dejo asi.
+##
+### `Para mejorar`
+##
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+En el practico2 hice que se pueda elegir entre dos juegos, el clasico o este. Lamentablemente no tuve tiempo de hacer que funcionen los dos. La idea la tengo pero decidi dejarlo simple porque no quiero demorar la entrega.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>Algunos botones no quedaron muy esteticos, y la combinacion de colores de algunos inputs podrian mejorarse.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>Algo que tambien dijo un compañero, y que lo mencionaste en la correccion del practico anterior, por alguna razon, al elegir una opcion muchas veces, la opcion "aleatoria" no se renueva, el estado no cambia. Un compañero hablo sobre forzar el cambio de estado, pero, nuevamente, el tiempo me fue poco.
 
-### `npm run eject`
+##
+##  Gracias
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Gracias por la buena onda Ale! Espero verte en el ultimo tramo, y que seas nuevamente mi profe.

@@ -5,6 +5,7 @@
 html{
     background-image: url("img/background.webp");
 }
+
 .body{
     
     background-position: center cover;
@@ -39,8 +40,9 @@ a{
 }
 
 input:invalid{
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.381);
 }
+
 .nombre{
     width: 12rem;
     height: 2rem;
@@ -84,6 +86,19 @@ input:invalid{
     display: none;
 }
 
+.title__btn{
+    border-radius: 20px;
+    height: 25px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.Resultado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 55rem;
+}
 
 .select{
         display: flex;

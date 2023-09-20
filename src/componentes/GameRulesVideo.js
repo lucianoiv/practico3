@@ -6,7 +6,7 @@ export const GameRulesVideo = (props) => {
     <>
         
         <div className="rules" id="video">
-        <button onClick={props.rulesVideo}>CLOSE</button>
+        <button className='title__btn' onClick={props.rulesVideo}>CLOSE</button>
             <h3>RULES FOR ROCK PAPER SCISSORS LIZARD SPOCK</h3>
             <div className="video">
                 <ul>
