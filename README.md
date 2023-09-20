@@ -1,16 +1,5 @@
-<<<<<<< HEAD
 # PIEDRA, PAPEL, TIJERAS, 
 # LAGARTO, SPOCK.
-=======
-# HOLA ALE!! SI ESTAS LEYENDO ESTO ES PORQUE TODAVIA ME FALTA UN POCO.
-# LA APP FUNCIONA, LE FALTA UN TOQUE DE CSS Y ME FALTA HACER ESTE README.
-# SI CREES QUE ME FALTA PARA APROBAR, POR FAVOR AVISAME.
-# QUIERO CONTINUAR CON LA TERCER PARTE DEL CURSO.
-# GRACIAS!!!!
-
-
-# Getting Started with Create React App
->>>>>>> e70a58667fa22524ab25bb266288ebb39c4fc15b
 
 Este proyecto fue creado con React.
 En el podes jugar al juego creado por Sheldon Cooper, un personaje de la serie [The Big Bang Theory](https://www.warnerbros.com/tv/big-bang-theory), que reinventa el juego clasico de piedra papel tijeras porque, segun él, las opciones del mismo son pocas y los empates son muy frecuentes, y agrega dos opciones más, **lagarto** y **spock** cada una con sus caracteristicas. [video](https://www.youtube.com/watch?v=pIpmITBocfM&pp=ygUgcm9jayBwYXBlciBzY2lzc29ycyBsaXphcmQgc3BvY2s%3D)
